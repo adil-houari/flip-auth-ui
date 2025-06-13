@@ -1,3 +1,28 @@
+# Flip Auth UI 🔐🔁
+
+A stylish login/register interface built with React, featuring a flip animation between both forms.
+
+## 🎯 Key Features
+- Login & Sign-up forms on a 3D card
+- 180° flip animation (CSS transition)
+- Gradient buttons & shadows
+- Welcome messages & input labels
+- Fully responsive layout
+
+## 🧰 Tech Stack
+- React
+- CSS3 (custom animation)
+- JSX
+
+## 🚀 Start locally
+
+--bash
+npm install
+npm start
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
