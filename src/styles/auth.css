@@ -1,0 +1,262 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #08011b, #7209b7);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card container */
+.main {
+  width: 460px;
+  height: 660px;
+  position: relative;
+  border-radius: 20px;
+  perspective: 1000px;
+}
+
+/* Flip logic */
+.form-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.login,
+.signup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.login {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.signup {
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Form title + subtitle */
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #222;
+  letter-spacing: -1px;
+}
+
+.form-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #555;
+  margin-top: 10px;
+}
+
+.form-subtitle span {
+  color: #bb6bd9;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.form-subtitle span:hover {
+  color: #9b51e0;
+  cursor: pointer;
+}
+
+/* Specific subtitle styling for Register */
+.register-sub {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #777;
+  margin-top: 8px;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation for login subtitle */
+.animate-text {
+  display: inline-block;
+  animation: pulseFade 2s infinite;
+  font-weight: 500;
+  color: #7209b7;
+}
+
+@keyframes pulseFade {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+input.invalid {
+  border: 2px solid #ff4d6d;
+  animation: shake 0.3s;
+}
+
+.error-msg {
+  color: #ff4d6d;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes shake {
+  0% {
+    transform: translateX(0px);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Input styles */
+.input-wrapper {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  background: #f8f8f8;
+}
+
+input:focus {
+  border: 1px solid #7209b7;
+}
+
+/* Error highlight (if needed) */
+input.invalid {
+  border: 2px solid #e63946;
+}
+
+.error-msg {
+  color: #e63946;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Main button */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #a100ff, #ff00cc);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+/* Alternative action: Sign up / Login */
+.alt-action-tag {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.alt-action-tag .tag {
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.alt-action-tag .tag:hover {
+  transform: scale(1.05);
+}
